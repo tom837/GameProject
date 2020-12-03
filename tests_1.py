@@ -15,7 +15,7 @@ icon = pygame.image.load('LOGO.png')
 pygame.display.set_icon(icon)
 
 #Joueur
-playerImg =pygame.image.load('hero.png')
+playerImg = pygame.image.load('hero.png')
 playerX = 400
 playerY = 400
 def player():
