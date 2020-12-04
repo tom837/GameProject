@@ -7,9 +7,12 @@ class gameScreen():
         self.size = (self.height,self.width)
         self.mode = pygame.display.set_mode(self.size)
         self.caption = pygame.display.set_caption("NSI Project")
-    
+        self.image = pygame.image.load("fr.gameproject/assets/background_WIP.png")
+            
     def update(self):
         self.mode = pygame.display.set_mode(self.size)
+        self.mode.blit(self.image,(0,0))
+        pygame.display.flip()
     
     def getSize(self):
         return self.size
