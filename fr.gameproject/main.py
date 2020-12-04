@@ -1,18 +1,12 @@
 #importation des libs
 import pygame
 import sys
+import gameClass.game
+#initialisation du jeu 
+gameClass.game.init()
 
-#initialisation des libs
-pygame.init()
 
-#initialisation des variable de paramètre 
-size = width, height = 1080, 720
 Continue = True
-
-#initialisation de la fenêtre
-pygame.display.set_caption("NSI Project")
-screen = pygame.display.set_mode(size)
-
 #boucle de rendering
 while Continue:
 
