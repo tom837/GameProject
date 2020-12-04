@@ -2,8 +2,11 @@
 import pygame
 import sys
 import gameClass.game
+import gameClass.screen
 #initialisation du jeu 
 gameClass.game.init()
+
+screen = gameClass.screen.gameScreen()
 
 
 Continue = True
@@ -14,6 +17,6 @@ while Continue:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             Continue = False
-
+    screen.update()
 pygame.exit()
 sys.exit()

@@ -1,5 +1,6 @@
 import entity
 import pygame
+
 #class de l'objet Player
 class Player(entity.Entity):
     #initialisation de l'objet 
@@ -14,4 +15,4 @@ class Player(entity.Entity):
         #initialisation des variable de l'objet Player 
         self.xp=0.0
         self.xp_To_Next_Lvl = 100.0
-        
+    

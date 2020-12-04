@@ -1,5 +1,5 @@
 import pygame
-
+import gameClass.screen
 #super class entity de la super class Sprite de pygame
 class Entity(pygame.sprite.Sprite):
     #initialisation de la fonction d'initialisation de l'objet entity
@@ -21,16 +21,26 @@ class Entity(pygame.sprite.Sprite):
     ##système de mouvement 
 
     #pour aller vers la droite 
-    def moveRight(self):
-        self.rect.x += self.velocity
+    def moveRight(self, screen):
+        #si la position X de l'entité n'est pas égale a la taille de l'écran, l'implémenté de velocity
+        if self.rect.x != screen.getHeight:
+            self.rect.x += self.velocity
+
     #pour aller vers la gauche 
     def moveLeft(self):
-        self.rect.x -= self.velocity
+        #si la position X de l'entité n'est pas égale 0, la décrémenté de velocity
+        if self.rect.x != 0:
+            self.rect.x -= self.velocity
+
     #pour aller vers le haut
     def moveUp(self):
-        self.rect.y += self.velocity
+        #si la position Y de l'entité n'est pas égale a 0, l'implémenté de velocity
+        if self.rect.y != 0:
+            self.rect.y -= self.velocity
+
     #pour aller vers le bas
-    def moveDown(self):
-        self.rect.y -= self.velocity
-    
+    def moveDown(self, screen):
+        #si la position Y de l'entité n'est pas égale a la taille de l'écran, l'implémenté de velocity
+        if self.rect.y != screen.getWidth:
+            self.rect.y += self.velocity
     
