@@ -18,5 +18,5 @@ while Continue:
         if event.type == pygame.QUIT:
             Continue = False
     screen.update()
-pygame.exit()
+pygame.quit()
 sys.exit()
