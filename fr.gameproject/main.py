@@ -3,11 +3,12 @@ import pygame
 import sys
 import gameClass.game
 import gameClass.screen
+import gameClass.Entity.player
 #initialisation du jeu 
 gameClass.game.init()
 
 screen = gameClass.screen.gameScreen()
-
+player = gameClass.Entity.player.Player()
 
 Continue = True
 #boucle de rendering
