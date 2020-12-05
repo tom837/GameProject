@@ -1,7 +1,11 @@
 import sys
 import pygame
-def init():
-    print("hello world")
-    pygame.init()
+from entityClass.player import Player
+import screen
 
+class Game():
     
+    def __init__(self):
+        #générer le joueur
+        self.player = Player()
+

@@ -19,16 +19,8 @@ class gameScreen():
         self.image = pygame.image.load(self.link)
 
 
-    #une méthode update qui va update l'écran a chaque image       
     def update(self):
-        #update de la variable mode 
-        self.mode = pygame.display.set_mode(self.size)
-
-        #initialisation de l'image  de fond 
-        self.mode.blit(self.image,(0,0))
-        pygame.display.flip()
-    
-    #méthodes de getter and setter
+        self.blit(self.image,(0,0))
 
     #méthode pour la taille 
     def getSize(self):
@@ -51,3 +43,5 @@ class gameScreen():
     def setWidth(self, nWidth):
         self.width = nWidth
         self.setSize((self.height, nWidth))
+    def blit(self, subject, rect):
+        self.mode.blit(subject, rect)
