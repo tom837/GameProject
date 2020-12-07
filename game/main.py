@@ -1,11 +1,11 @@
 #importation des libs
 import pygame
 import sys
-from gameClass.game import Game
-from gameClass.screen import gameScreen
+import gameClass.game
+import gameClass.screen
 #initialisation du jeu 
-game = Game()
-screen = gameScreen()
+game = gameClass.game.Game()
+screen = gameClass.screen.gameScreen()
 Continue = True
 #boucle de rendering
 while Continue:
