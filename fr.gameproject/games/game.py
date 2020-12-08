@@ -1,7 +1,5 @@
-import sys
-import pygame
 from entityClass.player import Player
-import screen
+
 
 class Game():
     

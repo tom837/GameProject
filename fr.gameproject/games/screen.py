@@ -1,7 +1,7 @@
 import pygame
 
 #creation de l'objet gameScreen
-class gameScreen():
+class GameClass():
     #Initialisation de l'objet gameScreen
 
     def __init__(self):

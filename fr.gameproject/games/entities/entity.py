@@ -1,6 +1,7 @@
 import pygame
 
-#super class entity de la super class Sprite de pygame
+#Super class entity de la super class Sprite de pygame
+
 class Entity(pygame.sprite.Sprite):
     #initialisation de la fonction d'initialisation de l'objet entity
     def __init__(self):
