@@ -1,13 +1,13 @@
 #importation des libs
-import pygame
 import sys
-from games import game
-from games import screen
+import pygame
+import games.game
+import games.screen
 #super class entity de la super class Sprite de pygame
 
 #initialisation du jeu 
-game = game.Game()
-screen = screen.GameScreen()
+game = games.game.Game()
+screen = games.screen.GameScreen()
 Continue = True
 #boucle de rendering
 while Continue:

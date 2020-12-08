@@ -1,9 +1,9 @@
-from entityClass.player import Player
+from entities.player import*
 
 
 class Game():
     
     def __init__(self):
         #générer le joueur
-        self.player = Player()
+        self.player = entities.player.Player()
 

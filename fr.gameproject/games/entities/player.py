@@ -1,8 +1,8 @@
-import entities.entity
+from entity import*
 import pygame
 
 #class de l'objet Player
-class Player(entities.entity.Entity):
+class Player(entity.Entity):
     #initialisation de l'objet 
     def __init__(self):
         #initialisation de la super class entity
