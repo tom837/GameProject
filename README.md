@@ -4,6 +4,12 @@
 - pour le système de coopération en ligne nous allons utiliser les biblioteque Sockets. 
 - nous allons essayer d'implémenté de l'intélligence artificiel pour gérer la difficulté en fonction du niveau du joueur. 
 
+# Contributor :
+- Thomas LOUDOUX
+- Chouaib SIDI-BOUMEDINE
+- Tom LEWIS
+- Jason CARTER
+
 # État d'avencement : 
 - système graphique pygame : implémenté 
 - système graphique openGL : non commencer 
