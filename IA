@@ -1,0 +1,98 @@
+from random import*
+from fichier import *
+class IA():
+    def __init__(self):
+        self.read_a()
+        
+    def read_a(self):
+        f=open("fichier.py","r")
+        data=f.read()
+        self.a = list(map(int,data.strip().split(",")))
+        f.close()
+        #print(self.a)
+    
+    def write_a(self):
+        f=open("fichier.py","w")
+        f.write(",".join(map(str,self.a)))
+        f.close()
+        
+    def modif(self,index,valeur):
+        #self.read_a()
+        if valeur<1:
+            valeur=1
+        
+        self.a[index]=valeur
+        self.write_a()
+        print(self.a)
+    
+    
+    def nb_enemies(self,lvl):
+        self.read_a()
+        a1=self.a[0]
+        b1=self.a[1]
+        a2=self.a[2]
+        b2=self.a[3]
+        a3=self.a[4]
+        b3=self.a[5]
+        a4=self.a[6]
+        b4=self.a[7]
+        assert type(lvl)==int
+        assert 0<=lvl<101
+        if lvl<25:
+            enemies=randint(a1*lvl//sqrt(lvl),b1*lvl//sqrt(lvl))
+        elif 25<=lvl<50:
+            enemies=randint(a2*lvl//sqrt(lvl),b2*lvl//sqrt(lvl))
+        elif 50<=lvl<75:
+            enemies=randint(a3*lvl//sqrt(lvl),b3*lvl//sqrt(lvl))
+        elif 75<=lvl<101:
+            enemies=randint(a4*lvl//sqrt(lvl),b4*lvl//sqrt(lvl))
+        print(enemies)
+        dificulter=input("dificuter")
+        if dificulter == "facile":
+            if lvl<25:
+                c=a1+1
+                d=b1+1
+                robot.modif(0,c)
+                robot.modif(1,d)
+            elif 25<lvl<50:
+                c=a2+1
+                d=b2+1
+                robot.modif(2,c)
+                robot.modif(3,d)
+            elif 50<lvl<75:
+                c=a3+1
+                d=b3+1
+                robot.modif(4,c)
+                robot.modif(5,d)
+            elif 75<=lvl<101:
+                c=a4+1
+                d=b4+1
+                robot.modif(6,c)
+                robot.modif(7,d)
+        elif dificulter == "dificile":
+            if lvl<25:
+                c=a1-1
+                d=b1-1
+                robot.modif(0,c)
+                robot.modif(1,d)
+            elif 25<lvl<50:
+                c=a2-1
+                d=b2-1
+                robot.modif(2,c)
+                robot.modif(3,d)
+            elif 50<lvl<75:
+                c=a3-1
+                d=b3-1
+                robot.modif(4,c)
+                robot.modif(5,d)
+            elif 75<=lvl<101:
+                c=a4-1
+                d=b4-1
+                robot.modif(6,c)
+                robot.modif(7,d)
+        return enemies
+
+#f=open("fichier.py","w")
+#f.write("1,3,3,6,6,9,9,12")
+       
+#f.close()
