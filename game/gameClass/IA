@@ -1,0 +1,216 @@
+from random import*
+from fichier import *
+from math import *
+class IA():
+    def __init__(self):
+        self.read_a()
+        
+    def read_a(self):
+        f=open("fichier.py","r")
+        data=f.read()
+        self.a = list(map(int,data.strip().split(",")))
+        f.close()
+        #print(self.a)
+    
+    def write_a(self):
+        f=open("fichier.py","w")
+        f.write(",".join(map(str,self.a)))
+        f.close()
+        
+    def modif(self,index,valeur):
+        #self.read_a()
+        if valeur<1:
+            valeur=1
+        
+        self.a[index]=valeur
+        self.write_a()
+        print(self.a)
+    
+    
+    def nb_enemies(self,lvl):
+        self.read_a()
+        a1=self.a[0]
+        b1=self.a[1]
+        a2=self.a[2]
+        b2=self.a[3]
+        a3=self.a[4]
+        b3=self.a[5]
+        a4=self.a[6]
+        b4=self.a[7]
+        assert type(lvl)==int
+        assert 0<=lvl<101
+        if lvl<25:
+            enemies=randint(a1*lvl//sqrt(lvl),b1*lvl//sqrt(lvl))
+        elif 25<=lvl<50:
+            enemies=randint(a2*lvl//sqrt(lvl),b2*lvl//sqrt(lvl))
+        elif 50<=lvl<75:
+            enemies=randint(a3*lvl//sqrt(lvl),b3*lvl//sqrt(lvl))
+        elif 75<=lvl<101:
+            enemies=randint(a4*lvl//sqrt(lvl),b4*lvl//sqrt(lvl))
+        print(enemies)
+        dificulter=input("dificuter")
+        if dificulter == "facile":
+            if lvl<25:
+                c=a1+1
+                d=b1+1
+                robot.modif(0,c)
+                robot.modif(1,d)
+            elif 25<lvl<50:
+                c=a2+1
+                d=b2+1
+                robot.modif(2,c)
+                robot.modif(3,d)
+            elif 50<lvl<75:
+                c=a3+1
+                d=b3+1
+                robot.modif(4,c)
+                robot.modif(5,d)
+            elif 75<=lvl<101:
+                c=a4+1
+                d=b4+1
+                robot.modif(6,c)
+                robot.modif(7,d)
+        elif dificulter == "dificile":
+            if lvl<25:
+                c=a1-1
+                d=b1-1
+                robot.modif(0,c)
+                robot.modif(1,d)
+            elif 25<lvl<50:
+                c=a2-1
+                d=b2-1
+                robot.modif(2,c)
+                robot.modif(3,d)
+            elif 50<lvl<75:
+                c=a3-1
+                d=b3-1
+                robot.modif(4,c)
+                robot.modif(5,d)
+            elif 75<=lvl<101:
+                c=a4-1
+                d=b4-1
+                robot.modif(6,c)
+                robot.modif(7,d)
+        return enemies
+
+
+
+robot = IA()
+robot.nb_enemies(45)
+
+
+from random import *
+class rat():
+    def __init__(self):
+        selft.data=rat
+        
+    def patrol(self):
+        self.move(left,20 pixels)
+        self.move(right,20 pixels)
+        
+    def hit(self):
+        swing(self)
+            
+    def attack(self):
+        if player_coordonates - self_coordonates > 5 pixels:
+            self.go_towards_ennemie()
+        if not player_facing(self):
+            selft.hit()
+        if player_facing(self):
+            self.dodge():
+    
+    def dodge(self):
+        if player right:
+            self.move(left,5 pixels)
+        elif player left:
+            self.move(right, 5 pixels)
+        elif player down:
+            self.move(up, 5 pixels)
+        elif player up:
+            self.move(down, 5 pixels)
+    
+    def run_away(self):
+        if player right:
+            self.move(left,randint(25,75) pixels)
+        elif player left:
+            self.move(right,randint(25,75) pixels)
+        elif player down:
+            self.move(up,randint(25,75) pixels)
+        elif player up:
+            self.move(down,randint(25,75) pixels)
+    
+    def go_towards_player(self):
+        if player right:
+            self.move(right,5 pixels)
+        elif player left:
+            self.move(left,5 pixels)
+        elif player down:
+            self.move(down,5 pixels)
+        elif player up:
+            self.move(up,5 pixels)        
+            
+    def fight_mode(self):
+        while not take_damage:
+            self.attack
+        if take_dammage:
+            self.run_away()
+            
+    def schema_attaque(self):
+        while not player.life()==0:
+            while player_coordonates - self_coordonates > 100 pixels:
+                self.patrol()
+            while player_coordonates - self_coordonates > 100 pixels: 
+                self.fight_mode()
+        
+class arquebusier():
+    def __init__(self):
+        self.data=arquebuse
+    
+    def patrol(self):
+        self.move(left,20 pixels)
+        self.move(right,20 pixels)
+    
+    def hit(self):
+        shoot(self)
+        
+    def go_towards_player(self):
+        if player right:
+            self.move(right,5 pixels)
+        elif player left:
+            self.move(left,5 pixels)
+        elif player down:
+            self.move(down,5 pixels)
+        elif player up:
+            self.move(up,5 pixels) 
+    
+    def run_away(self):
+        if player right:
+            self.move(left,5 pixels)
+        elif player left:
+            self.move(right,5 pixels)
+        elif player down:
+            self.move(up,5 pixels)
+        elif player up:
+            self.move(down,5 pixels)
+    
+    def attack(self):
+        if 20 < player_coordonates() - self_coordonates() < 30:
+            self.hit()
+        elif player_coordonates() - self_coordonates > 30:
+            self.go_towards_player()
+        elif player.coordonats() - self.coordonats < 20:
+            self.run_away()
+        
+    def corps_a_corps(self):
+        self.hit()
+        self.run_away()
+    
+    def schema_attaque(self):
+        while not player.life()==0:
+            while player_coordonates - self_coordonates > 150 pixels:
+                arquebuse.patrol()
+            while player_coordonates - self_coordonates > 150 pixels:
+                if player_coordonates - self_coordonates > 15 pixels:
+                    arquebuse.attack()
+                else:
+                    self.corps_a_corps()
